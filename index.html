@@ -1,14 +1,18 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
   <title>MM&H Mini Mart | Scott City, MO</title>
-  <meta name="description" content="Locally owned convenience store in Scott City, Missouri. Open daily 7am–12am. Snacks, drinks, everyday essentials." />
-  <meta name="robots" content="index, follow" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="MM&H Mini Mart is a locally owned convenience store in Scott City, Missouri. Open daily from 7:00 AM to 12:00 AM." />
+
+  <!-- IMPORTANT: path must be EXACT -->
+  <link rel="stylesheet" href="./styles.css">
 </head>
+
 <body>
+
 <header class="site-header">
   <div class="container header-inner">
     <div class="brand">
@@ -18,38 +22,118 @@
         <div class="brand-sub">Scott City, Missouri</div>
       </div>
     </div>
+
     <nav class="nav">
       <a href="#about">About</a>
-      <a href="#gallery">Store Gallery</a>
-      <a href="#location">Location & Hours</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#location">Location</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
+
 <main>
+
 <section class="hero">
   <div class="container hero-inner">
     <div>
       <h1>Your local stop for everyday essentials.</h1>
-      <p>MM&H Mini Mart is a locally owned convenience store serving Scott City with snacks, drinks, and everyday necessities.</p>
+      <p>
+        MM&H Mini Mart is a locally owned convenience store serving Scott City
+        with snacks, drinks, and everyday necessities.
+      </p>
+
       <div class="hero-actions">
-        <a class="btn" href="https://www.google.com/maps?q=2104+Main+Street+Scott+City+MO+63780" target="_blank">Get Directions</a>
+        <a class="btn" href="https://www.google.com/maps?q=2104+Main+Street+Scott+City+MO+63780" target="_blank">
+          Get Directions
+        </a>
+        <a class="btn btn-outline" href="#gallery">
+          View Store Photos
+        </a>
       </div>
-      <p class="fineprint">In-store shopping only. Selection may vary. No online sales.</p>
+
+      <p class="fineprint">
+        In-store shopping only. Selection may vary. No online sales.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Quick Info</div>
+      <div class="card-row"><span>Address</span><span>2104 Main Street</span></div>
+      <div class="card-row"><span>City</span><span>Scott City, MO 63780</span></div>
+      <div class="card-row"><span>Hours</span><span>7:00 AM – 12:00 AM</span></div>
+      <div class="card-row"><span>Type</span><span>Convenience Store</span></div>
     </div>
   </div>
 </section>
+
 <section id="about" class="section">
   <div class="container">
     <h2>About MM&H Mini Mart</h2>
-    <p>Serving Scott City daily from 7:00 AM to 12:00 AM.</p>
+    <p>
+      We proudly serve Scott City and nearby communities with a clean,
+      well-stocked mini mart focused on convenience and friendly service.
+    </p>
   </div>
 </section>
+
+<section id="gallery" class="section section-alt">
+  <div class="container">
+    <h2>Store Gallery</h2>
+    <p class="muted">Photos for informational purposes only.</p>
+
+    <div class="gallery">
+      <img src="assets/images/photo-01.jpg" alt="Store interior">
+      <img src="assets/images/photo-02.jpg" alt="Store interior">
+      <img src="assets/images/photo-03.jpg" alt="Store interior">
+      <img src="assets/images/photo-04.jpg" alt="Store interior">
+      <img src="assets/images/photo-05.jpg" alt="Store interior">
+      <img src="assets/images/photo-06.jpg" alt="Store interior">
+    </div>
+  </div>
+</section>
+
+<section id="location" class="section">
+  <div class="container two-col">
+    <div class="panel">
+      <h3>Location</h3>
+      <p>
+        MM&H Mini Mart<br>
+        2104 Main Street<br>
+        Scott City, MO 63780
+      </p>
+
+      <a class="btn btn-outline" href="https://www.google.com/maps?q=2104+Main+Street+Scott+City+MO+63780" target="_blank">
+        Open in Google Maps
+      </a>
+    </div>
+
+    <div class="panel">
+      <h3>Hours</h3>
+      <ul class="hours">
+        <li>Open daily — 7:00 AM to 12:00 AM</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section section-alt">
+  <div class="container">
+    <h2>Contact</h2>
+    <p class="muted">
+      Please visit us in store during business hours.
+    </p>
+  </div>
+</section>
+
 </main>
+
 <footer class="site-footer">
   <div class="container footer-inner">
-    <strong>MM&H Mini Mart</strong> • Scott City, MO
+    <div><strong>MM&H Mini Mart</strong> • Scott City, MO</div>
+    <div class="muted">In-store only • No online sales</div>
   </div>
 </footer>
+
 </body>
 </html>
