@@ -1,380 +1,217 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0b0f14" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>MM&H Mini Mart | Scott City, MO</title>
-  <meta name="description" content="MM&H Mini Mart is a locally owned convenience store in Scott City, Missouri. Open daily 7:00 AM–12:00 AM. Snacks, drinks, and everyday essentials." />
+  <title>MMH Mini Mart | Smoke Shop & Specialty Retail (Scott City, MO)</title>
+  <meta name="description" content="MMH Mini Mart is a local smoke shop in Scott City, MO offering disposables, glass, wraps, accessories, snacks, drinks, and an in-store gaming room." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#07080c" />
 
-  <!-- Open Graph (Facebook preview) -->
-  <meta property="og:title" content="MM&H Mini Mart | Scott City, MO" />
-  <meta property="og:description" content="Locally owned convenience store. Open daily 7:00 AM–12:00 AM. Snacks, drinks, and everyday essentials." />
+  <!-- Open Graph -->
+  <meta property="og:title" content="MMH Mini Mart | Smoke Shop & Specialty Retail" />
+  <meta property="og:description" content="Disposables, glass, wraps, accessories, plus snacks, drinks, and an in-store gaming room in Scott City, MO." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://mississippi-river-marketing.github.io/MM-H-Mini-Mart/" />
-  <!-- Put an image here when you have it: assets/images/og.jpg (1200x630) -->
-  <meta property="og:image" content="https://mississippi-river-marketing.github.io/MM-H-Mini-Mart/assets/images/og.jpg" />
 
-  <!-- Twitter card -->
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <!-- Header -->
-  <header class="site-header" id="top">
-    <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="MM&H Mini Mart Home">
-        <img
-          src="./assets/images/mmh-logo.png"
-          alt="MM&H Mini Mart"
-          class="site-logo"
-          loading="eager"
-        />
-        <div class="brand-text">
-          <div class="brand-name">MM&H Mini Mart</div>
-          <div class="brand-sub">Scott City, Missouri</div>
-        </div>
+  <!-- Sticky Navigation -->
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="brand" href="#top" aria-label="MMH Mini Mart Home">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__text">
+          <span class="brand__name">MMH Mini Mart</span>
+          <span class="brand__meta">Smoke Shop • Vape • Glass</span>
+        </span>
       </a>
 
-      <nav class="nav" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#highlights">What We Carry</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#location">Location</a>
-        <a href="#contact">Contact</a>
+      <nav class="nav__links" aria-label="Primary navigation">
+        <a href="#flavors">Flavor Vault</a>
+        <a href="#selection">Selection</a>
+        <a href="#visit">Visit</a>
+        <a class="nav__cta" href="#visit">Directions</a>
       </nav>
-
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
-        <span></span><span></span><span></span>
-      </button>
     </div>
-
-    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
-      <a href="#about">About</a>
-      <a href="#highlights">What We Carry</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#location">Location</a>
-      <a href="#contact">Contact</a>
-    </nav>
   </header>
 
-  <main id="main">
+  <main id="top">
     <!-- Hero -->
     <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <p class="pill">Open daily • 7:00 AM – 12:00 AM</p>
-
-          <h1>Your local stop for everyday essentials.</h1>
-
-          <p class="lead">
-            MM&H Mini Mart is a locally owned convenience store serving Scott City with snacks, drinks,
-            and everyday necessities—focused on a clean store and friendly service.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn" href="#location">Get Directions</a>
-            <a class="btn btn-outline" href="#gallery">View Photos</a>
+      <div class="hero__inner">
+        <div class="hero__content">
+          <div class="hero__kicker">
+            <span class="dot" aria-hidden="true"></span>
+            Scott City, MO • Open Daily • IDs required where applicable
           </div>
 
-          <p class="fineprint">
-            In-store shopping only. Selection may vary. No online sales.
+          <h1 class="hero__title">Disposables. Glass. Wraps. Flavor Variety.</h1>
+
+          <p class="hero__sub">
+            MMH Mini Mart is a local smoke shop in Scott City offering a wide selection of disposables,
+            glass, wraps, and accessories — with snacks, drinks, and a gaming room available in store.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#flavors">Browse Flavor Variety</a>
+            <a class="btn" href="#visit">Visit MMH</a>
+            <a class="btn btn--ghost" href="tel:+1XXXXXXXXXX">Call Store</a>
+          </div>
+
+          <p class="hero__fineprint">
+            Flavor listings are informational only. Availability varies by location and stock.
           </p>
         </div>
 
-        <aside class="card quick-card" aria-label="Quick info">
-          <div class="card-title">Quick Info</div>
+        <aside class="hero__card" aria-label="Quick info">
+          <div class="card">
+            <h2 class="card__title">Quick Info</h2>
 
-          <div class="card-row">
-            <span class="k">Hours</span>
-            <span class="v">7:00 AM – 12:00 AM (Daily)</span>
-          </div>
+            <div class="card__rows">
+              <div class="row">
+                <div class="row__label">Smoke Shop</div>
+                <div class="row__value">Disposables • Pods • Glass • Wraps</div>
+              </div>
+              <div class="row">
+                <div class="row__label">Convenience</div>
+                <div class="row__value">Snacks • Soda • Energy Drinks</div>
+              </div>
+              <div class="row">
+                <div class="row__label">Gaming Room</div>
+                <div class="row__value">Available where permitted by local law</div>
+              </div>
+              <div class="row">
+                <div class="row__label">Visit</div>
+                <div class="row__value">Scott City, Missouri</div>
+              </div>
+            </div>
 
-          <div class="card-row">
-            <span class="k">Location</span>
-            <span class="v">Scott City, MO 63780</span>
-          </div>
-
-          <div class="card-row">
-            <span class="k">Address</span>
-            <span class="v">2104 Main Street</span>
-          </div>
-
-          <a class="btn btn-small" href="https://www.google.com/maps?q=2104+Main+Street,+Scott+City,+MO+63780" target="_blank" rel="noopener">
-            Open in Google Maps
-          </a>
-
-          <div class="tip">
-            Tip: Save our location in your phone for quick directions anytime.
+            <div class="card__badges">
+              <span class="badge">Local</span>
+              <span class="badge">Flavor Variety</span>
+              <span class="badge">Fast Service</span>
+            </div>
           </div>
         </aside>
       </div>
     </section>
 
-    <!-- About -->
-    <section class="section" id="about">
-      <div class="container">
-        <div class="section-head">
-          <h2>About MM&H Mini Mart</h2>
-          <p class="muted">
-            A convenient, reliable stop for the essentials—right here in Scott City.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <div class="panel">
-            <h3>Locally Owned</h3>
-            <p class="muted">
-              We’re proud to serve our community with a friendly, straightforward shopping experience.
-            </p>
-          </div>
-
-          <div class="panel">
-            <h3>Clean & Stocked</h3>
-            <p class="muted">
-              We focus on keeping the store clean and staying stocked on the everyday basics.
-            </p>
-          </div>
-
-          <div class="panel">
-            <h3>Convenient Hours</h3>
-            <p class="muted">
-              Open daily from 7:00 AM to 12:00 AM for early mornings and late-night needs.
-            </p>
-          </div>
+    <!-- Animated Flavor Ticker -->
+    <section class="ticker" aria-label="Flavor ticker">
+      <div class="ticker__viewport">
+        <div class="ticker__track" id="flavorTickerTrack">
+          Flavor variety available in store • Flavor variety available in store •
         </div>
       </div>
     </section>
 
-    <!-- Highlights -->
-    <section class="section section-alt" id="highlights">
-      <div class="container">
-        <div class="section-head">
-          <h2>What We Carry</h2>
-          <p class="muted">
-            A quick overview of what you can find in-store. Availability may vary.
+    <!-- Flavor Vault -->
+    <section id="flavors" class="section">
+      <header class="section__head">
+        <h2>Flavor Vault</h2>
+        <p>Browse flavor varieties and brands we carry in store.</p>
+      </header>
+
+      <div class="vault">
+        <div class="vault__controls">
+          <label for="search" class="sr-only">Search flavors</label>
+          <input
+            id="search"
+            class="input"
+            type="text"
+            placeholder="Search flavors (Blue Razz, Watermelon, Mint...)"
+            autocomplete="off"
+          />
+          <div class="vault__hint">Tip: type at least 2 characters to narrow results.</div>
+        </div>
+
+        <div id="flavorGrid" class="grid" aria-live="polite">
+          <!-- JS injects flavor cards here -->
+        </div>
+
+        <footer class="vault__foot">
+          <p class="disclaimer">
+            Flavor listings are for informational purposes only. Availability varies by location and stock.
           </p>
-        </div>
-
-        <div class="grid-2">
-          <div class="panel">
-            <h3>Everyday Items</h3>
-            <ul class="bullets">
-              <li>Snacks & candy</li>
-              <li>Cold drinks & water</li>
-              <li>Quick meals & grab-and-go</li>
-              <li>Basic grocery essentials</li>
-            </ul>
-          </div>
-
-          <div class="panel">
-            <h3>Convenience</h3>
-            <ul class="bullets">
-              <li>Fast in-and-out shopping</li>
-              <li>Clean aisles and organized shelves</li>
-              <li>Friendly help at the counter</li>
-              <li>Convenient location in Scott City</li>
-            </ul>
-          </div>
-        </div>
-
-        <p class="fineprint" style="margin-top:14px;">
-          Note: This website is informational and does not sell products online.
-        </p>
+        </footer>
       </div>
     </section>
 
-    <!-- Gallery -->
-    <section class="section" id="gallery">
-      <div class="container">
-        <div class="section-head">
-          <h2>Store Gallery</h2>
-          <p class="muted">
-            Click any photo to view it larger.
-          </p>
-        </div>
+    <!-- Selection -->
+    <section id="selection" class="section">
+      <header class="section__head">
+        <h2>What you’ll find at MMH</h2>
+        <p>Smoke shop energy up front, with convenience items and a gaming room in-store.</p>
+      </header>
 
-        <div class="gallery">
-          <button class="shot" data-full="./assets/images/photo-01.jpeg" aria-label="View photo 1">
-            <img src="./assets/images/photo-01.jpeg" alt="Store interior view" loading="lazy" />
-          </button>
-          <button class="shot" data-full="./assets/images/photo-02.jpeg" aria-label="View photo 2">
-            <img src="./assets/images/photo-02.jpeg" alt="Store shelves view" loading="lazy" />
-          </button>
-          <button class="shot" data-full="./assets/images/photo-03.jpeg" aria-label="View photo 3">
-            <img src="./assets/images/photo-03.jpeg" alt="Store section view" loading="lazy" />
-          </button>
-          <button class="shot" data-full="./assets/images/photo-04.jpeg" aria-label="View photo 4">
-            <img src="./assets/images/photo-04.jpeg" alt="Store aisle view" loading="lazy" />
-          </button>
-          <button class="shot" data-full="./assets/images/photo-05.jpeg" aria-label="View photo 5">
-            <img src="./assets/images/photo-05.jpeg" alt="Additional store view" loading="lazy" />
-          </button>
-          <button class="shot" data-full="./assets/images/photo-06.jpeg" aria-label="View photo 6">
-            <img src="./assets/images/photo-06.jpeg" alt="Additional store view" loading="lazy" />
-          </button>
-        </div>
+      <div class="cards">
+        <article class="infoCard">
+          <h3>Smoke Shop Selection</h3>
+          <p>Disposables, pods, glass, wraps, papers, and accessories.</p>
+        </article>
+
+        <article class="infoCard">
+          <h3>Snacks & Drinks</h3>
+          <p>Chips, candy, soda, energy drinks, and grab-and-go items available in store.</p>
+        </article>
+
+        <article class="infoCard">
+          <h3>Gaming Room</h3>
+          <p>In-store gaming room available where permitted by local law.</p>
+        </article>
       </div>
     </section>
 
-    <!-- Location -->
-    <section class="section section-alt" id="location">
-      <div class="container">
-        <div class="section-head">
-          <h2>Location & Hours</h2>
-          <p class="muted">2104 Main Street • Scott City, MO 63780</p>
-        </div>
+    <!-- Visit -->
+    <section id="visit" class="section section--visit">
+      <header class="section__head">
+        <h2>Visit MMH Mini Mart</h2>
+        <p>Replace placeholders with your exact store details.</p>
+      </header>
 
-        <div class="two-col">
-          <div class="panel">
-            <h3>Hours</h3>
-            <ul class="hours">
-              <li><span>Mon–Sun</span><span>7:00 AM – 12:00 AM</span></li>
-            </ul>
+      <div class="visit">
+        <div class="visit__card">
+          <h3>Location & Hours</h3>
+          <p><strong>Address:</strong> 2104 Main St, Scott City, MO (update if needed)</p>
+          <p><strong>Phone:</strong> <a href="tel:+1XXXXXXXXXX">+1 (XXX) XXX-XXXX</a></p>
+          <p><strong>Hours:</strong> Daily 9AM–9PM (update if needed)</p>
 
-            <div class="actions-row">
-              <a class="btn" href="https://www.google.com/maps?q=2104+Main+Street,+Scott+City,+MO+63780" target="_blank" rel="noopener">Directions</a>
-              <a class="btn btn-outline" href="#contact">Contact</a>
-            </div>
-          </div>
-
-          <div class="panel map-wrap" aria-label="Google map">
-            <iframe
-              title="MM&H Mini Mart map"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=2104%20Main%20Street%2C%20Scott%20City%2C%20MO%2063780&output=embed">
-            </iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="section-head">
-          <h2>Contact</h2>
-          <p class="muted">
-            For questions, please visit us in-store during business hours.
-          </p>
-        </div>
-
-        <div class="grid-2">
-          <div class="panel">
-            <h3>Store Address</h3>
-            <p class="muted">
-              MM&H Mini Mart<br />
-              2104 Main Street<br />
-              Scott City, MO 63780
-            </p>
-            <a class="btn btn-outline" href="https://www.google.com/maps?q=2104+Main+Street,+Scott+City,+MO+63780" target="_blank" rel="noopener">
-              Open in Google Maps
+          <div class="visit__actions">
+            <a class="btn btn--primary" href="https://www.google.com/maps" target="_blank" rel="noopener">
+              Get Directions
             </a>
+            <a class="btn" href="tel:+1XXXXXXXXXX">Call Store</a>
           </div>
 
-          <div class="panel">
-            <h3>Notes</h3>
-            <p class="muted">
-              This website is informational only and does not list pricing or sell products online.
-            </p>
-            <p class="muted">
-              If you’re the owner and want to add a phone number or email, we can add it safely.
-            </p>
-          </div>
+          <p class="visit__fine">
+            Must be 21+ where applicable • Always follow local laws
+          </p>
+        </div>
+
+        <div class="visit__card visit__card--alt">
+          <h3>Good to know</h3>
+          <ul class="list">
+            <li>No online sales language (keeps Google indexing stable).</li>
+            <li>Flavor Vault is informational only.</li>
+            <li>Gaming room wording is intentionally compliant.</li>
+          </ul>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>
-        <strong>MM&H Mini Mart</strong> • Scott City, MO
-        <div class="muted">Open daily 7:00 AM – 12:00 AM</div>
-      </div>
-      <div class="muted">
-        © <span id="year"></span> MM&H Mini Mart
-      </div>
+  <footer class="footer">
+    <div class="footer__inner">
+      <p>© <span id="year"></span> MMH Mini Mart • Smoke Shop & Specialty Retail</p>
+      <p class="footer__muted">
+        Flavor listings are informational only • Availability varies • Follow local laws
+      </p>
     </div>
   </footer>
 
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Image preview">
-    <button class="lightbox-close" id="lightboxClose" aria-label="Close image">×</button>
-    <img id="lightboxImg" alt="Expanded view" />
-  </div>
-
-  <!-- LocalBusiness Schema (helps Google) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ConvenienceStore",
-    "name": "MM&H Mini Mart",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "2104 Main Street",
-      "addressLocality": "Scott City",
-      "addressRegion": "MO",
-      "postalCode": "63780",
-      "addressCountry": "US"
-    },
-    "openingHoursSpecification": [{
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-      "opens": "07:00",
-      "closes": "00:00"
-    }],
-    "url": "https://mississippi-river-marketing.github.io/MM-H-Mini-Mart/"
-  }
-  </script>
-
-  <script>
-    // year
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // mobile menu
-    const btn = document.getElementById("menuBtn");
-    const mobileNav = document.getElementById("mobileNav");
-    btn.addEventListener("click", () => {
-      const open = mobileNav.classList.toggle("open");
-      btn.setAttribute("aria-expanded", open ? "true" : "false");
-    });
-    mobileNav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
-      mobileNav.classList.remove("open");
-      btn.setAttribute("aria-expanded", "false");
-    }));
-
-    // lightbox
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightboxImg");
-    const lightboxClose = document.getElementById("lightboxClose");
-
-    function openLightbox(src) {
-      lightboxImg.src = src;
-      lightbox.classList.add("open");
-      lightbox.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
-    }
-    function closeLightbox() {
-      lightbox.classList.remove("open");
-      lightbox.setAttribute("aria-hidden", "true");
-      lightboxImg.src = "";
-      document.body.style.overflow = "";
-    }
-
-    document.querySelectorAll(".shot").forEach(btn => {
-      btn.addEventListener("click", () => openLightbox(btn.dataset.full));
-    });
-    lightboxClose.addEventListener("click", closeLightbox);
-    lightbox.addEventListener("click", (e) => { if (e.target === lightbox) closeLightbox(); });
-    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLightbox(); });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
