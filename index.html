@@ -4,44 +4,599 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MMH Mini Mart | Vape Shop, Smoke Shop & Convenience Store in Scott City, MO</title>
-  <meta name="description" content="MMH Mini Mart is a local vape shop, smoke shop, and convenience store in Scott City, Missouri offering disposable vapes, hookahs, glass, snacks, drinks, wraps, and accessories." />
-  <meta name="keywords" content="MMH Mini Mart, vape shop Scott City MO, smoke shop Scott City, convenience store Scott City Missouri, disposable vapes Scott City, hookahs Scott City" />
+  <meta
+    name="description"
+    content="MMH Mini Mart is a vape shop, smoke shop, and convenience store in Scott City, Missouri offering disposable vapes, hookahs, glass, wraps, snacks, drinks, and everyday essentials."
+  />
+  <meta
+    name="keywords"
+    content="MMH Mini Mart, vape shop Scott City MO, smoke shop Scott City, convenience store Scott City Missouri, disposable vapes Scott City, hookah shop Scott City"
+  />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.mmhminimart.com/" />
   <meta property="og:title" content="MMH Mini Mart | Scott City, Missouri" />
-  <meta property="og:description" content="Visit MMH Mini Mart in Scott City for vapes, smoke shop products, snacks, drinks, and more." />
+  <meta
+    property="og:description"
+    content="Visit MMH Mini Mart in Scott City for vapes, smoke shop products, snacks, drinks, and more."
+  />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/photo-01.jpeg" />
-  <meta property="og:url" content="https://www.mmhminimart.com/" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --bg: #080808;
+      --bg-soft: #111111;
+      --card: #151515;
+      --text: #f7f7f7;
+      --muted: #bbbbbb;
+      --border: rgba(255, 255, 255, 0.08);
+      --blue: #11a7df;
+      --red: #ff5c5c;
+      --cream: #f0edd2;
+      --max: 1200px;
+      --radius: 22px;
+      --shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(17, 167, 223, 0.12), transparent 28%),
+        radial-gradient(circle at top right, rgba(255, 92, 92, 0.10), transparent 22%),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(8, 8, 8, 0.86);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-wrap img {
+      height: 54px;
+      width: auto;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.05;
+    }
+
+    .brand-text strong {
+      font-size: 1rem;
+      letter-spacing: 0.03em;
+    }
+
+    .brand-text span {
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .nav-links a {
+      font-weight: 600;
+      color: var(--muted);
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: 0.25s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue), #33c6fb);
+      color: #061118;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.04);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.03);
+      border-color: var(--border);
+      color: #fff;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(5, 5, 5, 0.86) 0%, rgba(5, 5, 5, 0.72) 40%, rgba(5, 5, 5, 0.30) 100%),
+        url("assets/IMG_2518.jpeg") center/cover no-repeat;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      padding: 90px 0;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(17, 167, 223, 0.16);
+      color: #9cecff;
+      font-size: 0.88rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.02;
+      margin-top: 0;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 7vw, 5.8rem);
+      max-width: 780px;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      max-width: 730px;
+      margin: 0 0 28px;
+      color: #e4e4e4;
+      font-size: clamp(1rem, 2vw, 1.14rem);
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .hero-stats {
+      margin-top: 34px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 180px));
+      gap: 14px;
+      max-width: 620px;
+    }
+
+    .stat {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.35rem;
+      color: #fff;
+    }
+
+    .stat span {
+      color: #d6d6d6;
+      font-size: 0.92rem;
+    }
+
+    .section {
+      padding: 86px 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 32px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 12px;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+      display: grid;
+      gap: 22px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .card,
+    .gallery-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .card {
+      padding: 26px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 1.18rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .feature-icon {
+      width: 56px;
+      height: 56px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 18px;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, rgba(17,167,223,0.24), rgba(255,92,92,0.18));
+      font-size: 1.3rem;
+    }
+
+    .band {
+      background:
+        linear-gradient(135deg, rgba(17, 167, 223, 0.10), rgba(255, 92, 92, 0.08)),
+        #101010;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .promo {
+      padding: 26px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(17,167,223,0.18), rgba(255,92,92,0.13));
+      border: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .promo h3 {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    .promo p {
+      margin: 0;
+      color: #e5e5e5;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .media-frame {
+      overflow: hidden;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      background: #0f0f0f;
+    }
+
+    .media-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .copy h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 12px;
+    }
+
+    .copy p {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .feature-list {
+      margin: 16px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .feature-list li {
+      margin-bottom: 10px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .gallery-card {
+      overflow: hidden;
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 310px;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .gallery-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 24px;
+    }
+
+    .contact-box {
+      padding: 26px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-box h3 {
+      margin-bottom: 14px;
+    }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px;
+    }
+
+    .contact-list li {
+      margin-bottom: 12px;
+      color: var(--muted);
+    }
+
+    .hours {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .hours td {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .hours td:last-child {
+      color: #fff;
+      text-align: right;
+    }
+
+    .map-frame {
+      overflow: hidden;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      background: #0f0f0f;
+      min-height: 430px;
+      box-shadow: var(--shadow);
+    }
+
+    .map-frame iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 430px;
+      border: 0;
+    }
+
+    .footer {
+      border-top: 1px solid var(--border);
+      background: #0c0c0c;
+    }
+
+    .footer-inner {
+      padding: 36px 0;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 0.8fr;
+      gap: 24px;
+    }
+
+    .footer h4 {
+      margin-bottom: 12px;
+    }
+
+    .footer p,
+    .footer a,
+    .footer li {
+      color: var(--muted);
+    }
+
+    .footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-bottom {
+      padding: 18px 0 26px;
+      border-top: 1px solid var(--border);
+      color: #9a9a9a;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 1100px) {
+      .grid-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        flex-wrap: wrap;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        width: 100%;
+        order: 3;
+        padding-top: 8px;
+      }
+
+      .grid-2,
+      .grid-3,
+      .split,
+      .contact-layout,
+      .promo {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .grid-4,
+      .gallery-grid,
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-inner {
+        padding: 72px 0;
+      }
+    }
+  </style>
+
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ConvenienceStore",
-    "name": "MMH Mini Mart",
-    "image": "https://www.mmhminimart.com/assets/photo-01.jpeg",
-    "url": "https://www.mmhminimart.com/",
-    "telephone": "+1-573-000-0000",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "2104 Main Street",
-      "addressLocality": "Scott City",
-      "addressRegion": "MO",
-      "postalCode": "63780",
-      "addressCountry": "US"
-    },
-    "description": "MMH Mini Mart is a local vape shop, smoke shop, and convenience store in Scott City, Missouri.",
-    "priceRange": "$$"
-  }
+    {
+      "@context": "https://schema.org",
+      "@type": "ConvenienceStore",
+      "name": "MMH Mini Mart",
+      "image": "assets/IMG_2518.jpeg",
+      "description": "MMH Mini Mart is a local vape shop, smoke shop, and convenience store in Scott City, Missouri.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2104 Main Street",
+        "addressLocality": "Scott City",
+        "addressRegion": "MO",
+        "postalCode": "63780",
+        "addressCountry": "US"
+      },
+      "telephone": "+1-573-000-0000",
+      "priceRange": "$$"
+    }
   </script>
 </head>
 <body>
   <header class="topbar">
     <div class="container nav">
-      <a class="logo-wrap" href="index.html">
+      <a class="logo-wrap" href="#home">
         <img src="assets/mmh-logo.png" alt="MMH Mini Mart logo" />
         <div class="brand-text">
           <strong>MMH Mini Mart</strong>
@@ -50,32 +605,30 @@
       </a>
 
       <nav class="nav-links">
-        <a class="active" href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="about.html">About</a>
-        <a href="locations.html">Location</a>
-        <a href="contact.html">Contact</a>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
       </nav>
 
-      <div class="nav-actions">
-        <a class="btn btn-secondary" href="contact.html">Visit Us</a>
-      </div>
+      <a class="btn btn-secondary" href="#contact">Visit Us</a>
     </div>
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" id="home">
       <div class="container hero-inner">
-        <span class="eyebrow">Local Vape, Smoke & Convenience Store</span>
+        <span class="eyebrow">Vape Shop • Smoke Shop • Convenience Store</span>
         <h1>Scott City’s Go-To Spot for Vapes, Glass, Snacks & More</h1>
         <p>
-          MMH Mini Mart is a local convenience store and smoke shop in Scott City, Missouri offering disposable vapes,
-          hookahs, glass products, wraps, smoking accessories, drinks, snacks, and everyday essentials in one convenient stop.
+          MMH Mini Mart is a local vape shop, smoke shop, and convenience store in Scott City, Missouri offering disposable vapes,
+          hookahs, glass pieces, wraps, smoking accessories, drinks, snacks, and everyday essentials in one stop.
         </p>
+
         <div class="hero-buttons">
-          <a class="btn btn-primary" href="products.html">Explore Products</a>
-          <a class="btn btn-secondary" href="contact.html">Get Directions</a>
+          <a class="btn btn-primary" href="#products">Explore Products</a>
+          <a class="btn btn-secondary" href="#contact">Get Directions</a>
         </div>
 
         <div class="hero-stats">
@@ -95,13 +648,13 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="products">
       <div class="container">
         <div class="section-head">
-          <h2>Why People Stop at MMH Mini Mart</h2>
+          <h2>What You’ll Find at MMH Mini Mart</h2>
           <p>
-            We combine convenience-store essentials with smoke shop inventory, giving customers a cleaner,
-            more visually appealing shopping experience with a wide range of products under one roof.
+            MMH Mini Mart gives Scott City customers a stronger retail mix than a typical convenience store by combining smoke shop products,
+            mini mart items, and eye-catching displays in one location.
           </p>
         </div>
 
@@ -109,25 +662,25 @@
           <article class="card">
             <div class="feature-icon">💨</div>
             <h3>Disposable Vapes</h3>
-            <p>Browse a strong selection of popular devices, flavors, and new arrivals in a dedicated display area.</p>
+            <p>Browse a large selection of flavors and popular devices in a dedicated display area built for visibility and variety.</p>
           </article>
 
           <article class="card">
             <div class="feature-icon">🧿</div>
             <h3>Glass & Hookahs</h3>
-            <p>Shop glass pieces, hookahs, accessories, and smoke-shop products in an organized retail environment.</p>
+            <p>Shop hookahs, glass pieces, accessories, and smoke shop items in a more organized and visually appealing setting.</p>
+          </article>
+
+          <article class="card">
+            <div class="feature-icon">🔥</div>
+            <h3>Wraps & Accessories</h3>
+            <p>Find wraps, grinders, torches, papers, and other smoking accessories in dedicated sections throughout the store.</p>
           </article>
 
           <article class="card">
             <div class="feature-icon">🥤</div>
             <h3>Snacks & Drinks</h3>
-            <p>Grab cold drinks, snacks, and mini-mart essentials while you shop, making every visit easy and efficient.</p>
-          </article>
-
-          <article class="card">
-            <div class="feature-icon">📍</div>
-            <h3>Local Convenience</h3>
-            <p>Located on Main Street in Scott City, MMH Mini Mart is built to serve local customers quickly and reliably.</p>
+            <p>Grab drinks, candy, snacks, and quick convenience-store items while you shop, making every stop easier and faster.</p>
           </article>
         </div>
       </div>
@@ -137,95 +690,147 @@
       <div class="container">
         <div class="promo">
           <div>
-            <h3>New Flavors, New Inventory, New Reasons to Stop In</h3>
+            <h3>New Flavors. New Inventory. More Reasons to Stop In.</h3>
             <p>
-              Looking for a vape shop in Scott City, Missouri with an eye-catching product selection and a cleaner shopping experience?
-              MMH Mini Mart continues expanding inventory so customers can find new options and everyday favorites in one place.
+              Looking for a vape shop in Scott City, Missouri with better presentation and a wider product mix?
+              MMH Mini Mart continues building a stronger local shopping experience.
             </p>
           </div>
-          <a class="btn btn-primary" href="products.html">View Product Categories</a>
+          <a class="btn btn-primary" href="#contact">Plan Your Visit</a>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section-head">
+          <h2>Store Gallery</h2>
+          <p>
+            Exterior, interior, and product display photos help customers see the quality, layout, and visual appeal of MMH Mini Mart before they walk in.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-card">
+            <img src="assets/IMG_2518.jpeg" alt="Exterior storefront of MMH Mini Mart in Scott City Missouri" />
+          </div>
+          <div class="gallery-card">
+            <img src="assets/photo-03.jpeg" alt="Interior view of MMH Mini Mart convenience store layout" />
+          </div>
+          <div class="gallery-card">
+            <img src="assets/IMG_2519.jpeg" alt="Large vape display inside MMH Mini Mart" />
+          </div>
+          <div class="gallery-card">
+            <img src="assets/photo-04.jpeg" alt="Hookah and glass display wall inside MMH Mini Mart" />
+          </div>
+          <div class="gallery-card">
+            <img src="assets/IMG_2524.jpeg" alt="Smoke accessories display case at MMH Mini Mart" />
+          </div>
+          <div class="gallery-card">
+            <img src="assets/IMG_2536.jpeg" alt="Wide view of MMH Mini Mart storefront" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
       <div class="container split">
         <div class="copy">
-          <h2>Built to Look Better Than the Average Convenience Store</h2>
+          <h2>About MMH Mini Mart</h2>
           <p>
-            MMH Mini Mart stands out visually with organized displays, bright product sections, modern shelving,
-            and a wide-open interior that makes shopping more inviting. The store is designed to feel cleaner,
-            more professional, and easier to browse than the typical mini mart.
+            MMH Mini Mart is a local Scott City business built to offer more than the average mini mart.
+            By combining smoke shop inventory, vape products, convenience items, and a more organized interior layout,
+            the store creates a better shopping experience for local customers.
           </p>
           <p>
-            That visual presentation matters. It builds trust with customers, improves walk-in experience,
-            and reinforces MMH Mini Mart as a serious local destination for vape and smoke shop products.
+            Customers searching for a smoke shop near Scott City, disposable vapes in Scott City,
+            or a convenience store with more product variety can find all of that in one place here.
           </p>
           <ul class="feature-list">
-            <li>Dedicated smoke shop displays</li>
-            <li>Large interior with clean layout</li>
-            <li>Exterior storefront visibility on Main Street</li>
-            <li>Multiple product categories for convenience and retention</li>
+            <li>Locally positioned in Scott City, Missouri</li>
+            <li>Stronger visual presentation than a typical mini mart</li>
+            <li>Broad product mix for repeat visits</li>
+            <li>Built for convenience, selection, and local trust</li>
           </ul>
         </div>
 
         <div class="media-frame">
-          <img src="assets/photo-03.jpeg" alt="Inside MMH Mini Mart showing interior store layout" />
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Featured Store Highlights</h2>
-          <p>
-            These product areas help define MMH Mini Mart’s identity as both a smoke shop and convenience stop in Scott City.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="product-card">
-            <img src="assets/IMG_2519.jpeg" alt="Large vape display inside MMH Mini Mart" />
-            <span class="product-tag">Popular Category</span>
-            <h3>Vape Display</h3>
-            <p>Large-format vape displays showcase a broad mix of flavors and brands for customers looking for variety and convenience.</p>
-          </article>
-
-          <article class="product-card">
-            <img src="assets/photo-04.jpeg" alt="Glass and hookah wall display inside MMH Mini Mart" />
-            <span class="product-tag">Smoke Shop</span>
-            <h3>Glass & Hookah Selection</h3>
-            <p>From hookahs to glass pieces and accessories, this section gives customers more reasons to choose MMH Mini Mart locally.</p>
-          </article>
-
-          <article class="product-card">
-            <img src="assets/IMG_2518.jpeg" alt="Storefront exterior of MMH Mini Mart in Scott City Missouri" />
-            <span class="product-tag">Easy to Find</span>
-            <h3>Scott City Storefront</h3>
-            <p>Strong curb visibility and a clean storefront make MMH Mini Mart easier to recognize, trust, and revisit.</p>
-          </article>
+          <img src="assets/IMG_2504.jpeg" alt="Smoke shop display case inside MMH Mini Mart" />
         </div>
       </div>
     </section>
 
     <section class="section band">
-      <div class="container split reverse">
+      <div class="container split">
         <div class="media-frame">
-          <img src="assets/IMG_2504.jpeg" alt="Smoke shop display case inside MMH Mini Mart" />
+          <img src="assets/IMG_2507.jpeg" alt="Front entrance of MMH Mini Mart in Scott City" />
         </div>
 
         <div class="copy">
-          <h2>SEO-Relevant Local Store Content</h2>
+          <h2>SEO-Relevant Local Content</h2>
           <p>
             MMH Mini Mart is a vape shop and convenience store in Scott City, Missouri. Customers searching for a smoke shop near Scott City,
-            disposable vapes in Scott City, or a local mini mart with smoking accessories can find a broad range of products here.
+            disposable vapes in Scott City, hookahs in Scott City, or a convenience store with smoke shop products can find a broad selection here.
           </p>
           <p>
-            The store serves local shoppers looking for convenience, variety, and a better overall retail experience.
-            Whether someone needs snacks, drinks, hookahs, wraps, or vape products, MMH Mini Mart offers multiple categories in a single stop.
+            The store serves local shoppers looking for a faster stop, stronger product variety, and a more visually appealing experience.
           </p>
-          <a class="btn btn-primary" href="contact.html">Plan Your Visit</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <h2>Visit MMH Mini Mart</h2>
+          <p>
+            Stop by and see the store for yourself. Replace the phone number and hours below with the exact business information you want live.
+          </p>
+        </div>
+
+        <div class="contact-layout">
+          <div class="contact-box">
+            <h3>Store Information</h3>
+
+            <ul class="contact-list">
+              <li><strong>Business Name:</strong> MMH Mini Mart</li>
+              <li><strong>Address:</strong> 2104 Main Street, Scott City, MO 63780</li>
+              <li><strong>Phone:</strong> <a href="tel:+15730000000">(573) 000-0000</a></li>
+              <li><strong>Category:</strong> Vape Shop, Smoke Shop & Convenience Store</li>
+            </ul>
+
+            <h3>Business Hours</h3>
+            <table class="hours">
+              <tr><td>Monday</td><td>Open</td></tr>
+              <tr><td>Tuesday</td><td>Open</td></tr>
+              <tr><td>Wednesday</td><td>Open</td></tr>
+              <tr><td>Thursday</td><td>Open</td></tr>
+              <tr><td>Friday</td><td>Open</td></tr>
+              <tr><td>Saturday</td><td>Open</td></tr>
+              <tr><td>Sunday</td><td>Open</td></tr>
+            </table>
+
+            <div style="margin-top:20px; display:flex; flex-wrap:wrap; gap:12px;">
+              <a
+                class="btn btn-primary"
+                href="https://www.google.com/maps/search/?api=1&query=2104+Main+Street,+Scott+City,+MO"
+                target="_blank"
+                rel="noopener"
+              >
+                Open in Maps
+              </a>
+              <a class="btn btn-secondary" href="tel:+15730000000">Call Now</a>
+            </div>
+          </div>
+
+          <div class="map-frame">
+            <iframe
+              src="https://www.google.com/maps?q=2104+Main+Street,+Scott+City,+MO&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Map showing MMH Mini Mart in Scott City Missouri">
+            </iframe>
+          </div>
         </div>
       </div>
     </section>
@@ -236,19 +841,18 @@
       <div>
         <h4>MMH Mini Mart</h4>
         <p>
-          Local vape shop, smoke shop, and convenience store serving Scott City, Missouri with a broader product mix and cleaner visual presentation.
+          A local vape shop, smoke shop, and convenience store serving Scott City, Missouri with a broader product mix and stronger visual presentation.
         </p>
       </div>
 
       <div>
-        <h4>Pages</h4>
+        <h4>Quick Links</h4>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="locations.html">Location</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
 
@@ -256,8 +860,8 @@
         <h4>Visit</h4>
         <ul>
           <li>2104 Main Street</li>
-          <li>Scott City, MO</li>
-          <li><a href="contact.html">Get directions</a></li>
+          <li>Scott City, MO 63780</li>
+          <li><a href="tel:+15730000000">(573) 000-0000</a></li>
         </ul>
       </div>
     </div>
